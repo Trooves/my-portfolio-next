@@ -2,13 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 async function getRandomProject() {
-  // Dans une application réelle, vous pourriez récupérer un projet mis en avant
-  // ici, nous récupérons juste le premier projet de notre API
   const response = await fetch('http://localhost:3000/api/projets', { 
     cache: 'no-store' 
   });
   const projects = await response.json();
-  return projects[0]; // Retourne le premier projet
+  return projects[0];
 }
 
 export default async function Home() {
